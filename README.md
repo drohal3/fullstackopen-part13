@@ -65,3 +65,23 @@ After adding 2 records, `SELECT * from blogs;` returns:
 (2 rows)
 ```
 
+## Exercise 13.3.
+**Task:**
+Create a functionality in your application which prints the blogs in the database on the command-line, e.g. as follows:
+```
+$ node cli.js
+Executing (default): SELECT * FROM blogs
+Dan Abramov: 'On let vs const', 0 likes
+Laurenz Albe: 'Gaps in sequences in PostgreSQL', 0 likes
+```
+
+**Solution:**
+Functionality implemented in [exercise3/cli.js](./exercise-3/cli.js)
+
+running with `node cli.js`, output:
+```
+...
+Executing (default): SELECT * FROM blogs
+Dominik Rohal: My book 1, 0 likes
+Dominik Rohal: My book 2, 0 likes
+```
