@@ -85,3 +85,36 @@ Executing (default): SELECT * FROM blogs
 Dominik Rohal: My book 1, 0 likes
 Dominik Rohal: My book 2, 0 likes
 ```
+
+## Exercise 13.4.
+**Task:**
+Transform your application into a web application that supports the following operations
+
+- GET api/blogs (list all blogs)
+- POST api/blogs (add a new blog)
+- DELETE api/blogs/:id (delete a blog)
+
+**Solution:**
+
+Example POST body to create new blog:
+```
+{
+    "author": "Dominik Rohal",
+    "url": "dominikrohal.com",
+    "title": "The best book 1"
+}
+```
+
+Response `201`:
+```
+{
+    "likes": 0,
+    "id": 2,
+    "author": "Dominik Rohal",
+    "url": "dominikrohal.com",
+    "title": "The best book 1"
+}
+```
+
+Solution is implemented in [exercise-4/cli.js](exercise-4/cli.js)
+
