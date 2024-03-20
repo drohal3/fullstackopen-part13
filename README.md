@@ -118,3 +118,27 @@ Response `201`:
 
 Solution is implemented in [exercise-4/cli.js](exercise-4/cli.js)
 
+## Exercise 13.5.
+**Task:**
+Change the structure of your application to match the one in the course material, or to follow some other similar clear convention.
+
+**Solution:**
+
+Run database in Docker
+```bash
+docker run -e POSTGRES_PASSWORD=mysecretpassword -p 54321:5432 postgres
+```
+Navigate to [exercise-5](./exercise-5)
+```bash
+cd ./exercise-5
+```
+Install dependencies
+```bash
+npm install
+```
+Start app
+```bash
+node index.js
+```
+
+Solution implemented in [exercise-5](./exercise-5) folder.
