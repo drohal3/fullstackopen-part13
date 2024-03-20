@@ -241,3 +241,11 @@ Error message when trying to create user with non email username:
     ]
 }
 ```
+
+## Exercise 13.10.
+**Task:**
+Expand the application so that the current logged-in user identified by a token is linked to each blog added. To do this you will also need to implement a login endpoint POST /api/login, which returns the token.
+
+**Solution:**
+Implemented together with the previous exercises in [exercise-5](./exercise-5).
+

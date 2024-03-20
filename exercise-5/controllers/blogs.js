@@ -14,7 +14,13 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  const blog = await Blog.create(req.body)
+  const decodedToken = req.decodedToken
+  if (!decodedToken) {
+    return res.status(401).json({ error: 'token missing' })
+  }
+
+  const blogData = req.body
+  const blog = await Blog.create({...blogData, userId: decodedToken.id})
   res.json(blog)
 })
 
