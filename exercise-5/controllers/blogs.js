@@ -13,16 +13,13 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  try {
-    const blog = await Blog.create(req.body)
-    res.json(blog)
-  } catch(error) {
-    return res.status(400).json({ error })
-  }
+  const blog = await Blog.create(req.body)
+  res.json(blog)
 })
 
 router.get('/:id', findBlog, async (req, res) => {
   if (req.blog) {
+    console.log("BLOOOG")
     res.json(req.blog)
   } else {
     res.status(404).end()
@@ -42,6 +39,7 @@ router.put('/:id', findBlog, async (req, res) => {
     await req.blog.save()
     res.json(req.blog)
   } else {
+    // This one kept here, not centralized in the middleware
     res.status(404).end()
   }
 })

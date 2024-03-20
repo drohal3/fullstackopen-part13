@@ -158,3 +158,16 @@ likes: 3
 
 **Solution:**
 Implemented together with the previous exercise in [exercise-5](./exercise-5).
+
+## Exercise 13.7.
+**Task:**
+Centralize the application error handling in middleware as in [part 3](https://fullstackopen.com/en/part3/saving_data_to_mongo_db#moving-error-handling-into-middleware). You can also enable middleware [express-async-errors](https://github.com/davidbanham/express-async-errors) as we did in [part 4](https://fullstackopen.com/en/part4/testing_the_backend#eliminating-the-try-catch).
+
+The data returned in the context of an error message is not very important.
+
+At this point, the situations that require error handling by the application are creating a new blog and changing the number of likes on a blog. Make sure the error handler handles both of these appropriately.
+
+**Solution:**
+Implemented together with the previous exercises in [exercise-5](./exercise-5).
+
+404 error kept in the router. Handled `SequelizeDatabaseError` and `SequelizeValidationError` in the middleware. This handles incorrect type and missing value. Additionally, handled unknown endpoint in a middleware.
