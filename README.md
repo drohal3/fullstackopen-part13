@@ -213,4 +213,6 @@ response:
     "createdAt": "2024-03-20T14:26:07.515Z"
 }
 ```
+>I did token extractor as "global" middleware.
+
 TODO:

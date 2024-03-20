@@ -8,6 +8,7 @@ const findBlog = async (req, res, next) => {
 }
 
 router.get('/', async (req, res) => {
+  console.log(req.decodedToken)
   const blogs = await Blog.findAll()
   res.json(blogs)
 })
