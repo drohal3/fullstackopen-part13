@@ -34,6 +34,19 @@ router.get('/:id', findBlog, async (req, res) => {
 })
 
 router.delete('/:id', findBlog, async (req, res) => {
+  const decodedToken = req.decodedToken
+  if (!decodedToken) {
+    return res.status(401).json({ error: 'token missing' })
+  }
+
+  if (!req.blog) {
+    return res.status(404).json({ error: 'Not Found!' })
+  }
+
+  if (req.blog.userId !== decodedToken.id) {
+    return res.status(401).json({ error: 'Unauthorized!' })
+  }
+
   if (req.blog) {
     await req.blog.destroy()
   }

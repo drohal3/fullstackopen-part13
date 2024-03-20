@@ -249,3 +249,10 @@ Expand the application so that the current logged-in user identified by a token 
 **Solution:**
 Implemented together with the previous exercises in [exercise-5](./exercise-5).
 
+## Exercise 13.11.
+**Task:**
+Make deletion of a blog only possible for the user who added the blog.
+
+**Solution:**
+Implemented together with the previous exercises in [exercise-5](./exercise-5).
+
