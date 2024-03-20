@@ -215,4 +215,29 @@ response:
 ```
 >I did token extractor as "global" middleware.
 
-TODO:
+## Exercise 13.9.
+**Task:**
+Sequelize provides a set of pre-defined [validations](https://sequelize.org/master/manual/validations-and-constraints.html) for the model fields, which it performs before storing the objects in the database.
+
+It's decided to change the user creation policy so that only a valid email address is valid as a username. Implement validation that verifies this issue during the creation of a user.
+
+Modify the error handling middleware to provide a more descriptive error message of the situation (for example, using the Sequelize error message), e.g.
+```
+{
+    "error": [
+        "Validation isEmail on username failed"
+    ]
+}
+```
+
+**Solution:**
+Implemented together with the previous exercises in [exercise-5](./exercise-5).
+
+Error message when trying to create user with non email username:
+```
+{
+    "error": [
+        "Validation error: Validation isEmail on username failed"
+    ]
+}
+```
