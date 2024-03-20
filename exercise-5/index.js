@@ -9,12 +9,15 @@ const { connectToDatabase } = require('./util/db')
 // ^^^ can eliminate try-catch structure of our routers
 require('express-async-errors')
 const middleware = require('./util/middleware')
+
 const blogsRouter = require('./controllers/blogs')
+const userRouter = require('./controllers/users')
 
 const app = express()
 // app.use(cors)
 app.use(express.json())
 app.use('/api/blogs', blogsRouter)
+app.use('/api/users', userRouter)
 
 const start = async () => {
   await connectToDatabase()

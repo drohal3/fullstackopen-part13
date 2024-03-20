@@ -171,3 +171,46 @@ At this point, the situations that require error handling by the application are
 Implemented together with the previous exercises in [exercise-5](./exercise-5).
 
 404 error kept in the router. Handled `SequelizeDatabaseError` and `SequelizeValidationError` in the middleware. This handles incorrect type and missing value. Additionally, handled unknown endpoint in a middleware.
+
+## Exercise 13.8.
+**Task:**
+Add support for users to the application. In addition to ID, users have the following fields:
+
+- name (string, must not be empty)
+- username (string, must not be empty)
+
+Unlike in the material, do not prevent Sequelize from creating [timestamps](https://sequelize.org/master/manual/model-basics.html#timestamps) created_at and updated_at for users
+
+All users can have the same password as the material. You can also choose to properly implement passwords as in [part 4](https://fullstackopen.com/en/part4/user_administration).
+
+Implement the following routes
+
+- POST api/users (adding a new user)
+- GET api/users (listing all users)
+- PUT api/users/:username (changing a username, keep in mind that the parameter is not id but username)
+
+Make sure that the timestamps created_at and updated_at automatically set by Sequelize work correctly when creating a new user and changing a username.
+
+**Solution:**
+Implemented together with the previous exercises in [exercise-5](./exercise-5).
+
+Example data to create a user:
+
+POST `/api/users`
+```
+{
+    "name": "Dominik Rohal 3",
+    "username": "drohal3"
+}
+```
+response:
+```
+{
+    "id": 3,
+    "name": "Dominik Rohal 3",
+    "username": "drohal3",
+    "updatedAt": "2024-03-20T14:26:07.515Z",
+    "createdAt": "2024-03-20T14:26:07.515Z"
+}
+```
+TODO:
