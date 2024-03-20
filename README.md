@@ -142,3 +142,19 @@ node index.js
 ```
 
 Solution implemented in [exercise-5](./exercise-5) folder.
+
+## Exercise 13.6.
+**Task:**
+Also, implement support for changing the number of a blog's likes in the application, i.e. the operation
+
+PUT /api/blogs/:id (modifying the like count of a blog)
+
+The updated number of likes will be relayed with the request:
+```
+{
+likes: 3
+}
+```
+
+**Solution:**
+Implemented together with the previous exercise in [exercise-5](./exercise-5).
