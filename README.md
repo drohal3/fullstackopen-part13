@@ -362,7 +362,7 @@ Implemented together with the previous exercises in [exercise-5](./exercise-5).
 
 Delete all tables from your application's database.
 
-Make a migration that initializes the database. Add created_at and updated_at timestamps for both tables. Keep in mind that you will have to add them in the migration yourself.
+Make a migration that initializes the database. Add created_at and updated_at [timestamps](https://sequelize.org/master/manual/model-basics.html#timestamps) for both tables. Keep in mind that you will have to add them in the migration yourself.
 
 NOTE: be sure to remove the commands User.sync() and Blog.sync(), which synchronizes the models' schemas from your code, otherwise your migrations will fail.
 
@@ -375,4 +375,9 @@ Migration file: [20240321_00_init_notes_users.js](./exercise-17/migrations/20240
 
 > The columns createdAt and updatedAt are created manually, but the values are handled by database.
 
+## Exercise 13.18.
+**Task:**
 
+Expand your application (by migration) so that the blogs have a year written attribute, i.e. a field year which is an integer at least equal to 1991 but not greater than the current year. Make sure the application gives an appropriate error message if an incorrect value is attempted to be given for a year written.
+
+**Solution:**
