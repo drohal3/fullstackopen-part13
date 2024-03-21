@@ -381,3 +381,24 @@ Migration file: [20240321_00_init_notes_users.js](./exercise-17/migrations/20240
 Expand your application (by migration) so that the blogs have a year written attribute, i.e. a field year which is an integer at least equal to 1991 but not greater than the current year. Make sure the application gives an appropriate error message if an incorrect value is attempted to be given for a year written.
 
 **Solution:**
+Implemented together with the previous exercise in [exercise-17](./exercise-17).
+
+Migration file: [20240321_01_added_year_to_blog.js](./exercise-17/migrations/20240321_01_added_year_to_blog.js)
+
+The validation is defined in the blog model, as following:
+
+```
+...
+year: {
+  type: DataTypes.INTEGER,
+    validate: {
+    isCorrectYear(value) {
+      if (parseInt(value) > new Date().getUTCFullYear() || parseInt(value) < 1991) {
+        throw new Error('The year must be between 1991 and current year!.');
+      }
+    }
+  }
+}
+```
+
+An alternative would be to use built-in validators min and max.
