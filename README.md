@@ -256,3 +256,9 @@ Make deletion of a blog only possible for the user who added the blog.
 **Solution:**
 Implemented together with the previous exercises in [exercise-5](./exercise-5).
 
+## Exercise 13.12.
+**Task:**
+Modify the routes for retrieving all blogs and all users so that each blog shows the user who added it and each user shows the blogs they have added.
+
+**Solution:**
+Implemented together with the previous exercises in [exercise-5](./exercise-5).
