@@ -262,3 +262,18 @@ Modify the routes for retrieving all blogs and all users so that each blog shows
 
 **Solution:**
 Implemented together with the previous exercises in [exercise-5](./exercise-5).
+
+## Exercise 13.13.
+**Task:**
+Implement filtering by keyword in the application for the route returning all blogs. The filtering should work as follows
+
+- GET /api/blogs?search=react returns all blogs with the search word react in the title field, the search word is case-insensitive
+- GET /api/blogs returns all blogs
+
+[This](https://sequelize.org/master/manual/model-querying-basics.html#operators) should be useful for this task and the next one.
+
+**Solution:**
+Implemented together with the previous exercises in [exercise-5](./exercise-5).
+
+Used `Op.iLike` operator.
+
