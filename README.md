@@ -301,3 +301,16 @@ if (req.query.search) {
     }
 }
 ```
+
+## Exercise 13.15.
+**Task:**
+Modify the blogs route so that it returns blogs based on likes in descending order. Search the [documentation](https://sequelize.org/master/manual/model-querying-basics.html) for instructions on ordering.
+
+**Solution:**
+Implemented together with the previous exercises in [exercise-5](./exercise-5).
+
+Ordered achieved by adding the following section in `findAll` options:
+```JS
+order: [['likes','DESC']]
+```
+
