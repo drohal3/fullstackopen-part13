@@ -26,14 +26,10 @@ module.exports = {
         defaultValue: 0
       },
       created_at: {
-        allowNull: true,
         type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW
       },
       updated_at: {
-        allowNull: true,
         type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW
       }
     })
     await queryInterface.createTable('users', {
