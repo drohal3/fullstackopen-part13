@@ -277,3 +277,27 @@ Implemented together with the previous exercises in [exercise-5](./exercise-5).
 
 Used `Op.iLike` operator.
 
+## Exercise 13.14.
+**Task:**
+Expand the filter to search for a keyword in either the title or author fields, i.e.
+
+GET /api/blogs?search=jami returns blogs with the search word jami in the title field or in the author field
+
+**Solution:**
+Implemented together with the previous exercises in [exercise-5](./exercise-5).
+
+Constructed where like the following:
+```JS
+let where = {}
+
+// ...previous conditions
+
+if (req.query.search) {
+    where = {...where,
+      [Op.or]: [
+        { title: {[Op.iLike] : `%${req.query.search}%`} },
+        { author: {[Op.iLike] : `%${req.query.search}%`} }
+      ]
+    }
+}
+```
