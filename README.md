@@ -371,4 +371,5 @@ NOTE2: if you have to delete tables from the command line (i.e. you don't do the
 **Solution:**
 Implemented in [exercise-17](./exercise-17).
 
-...
+Migration file: [20240321_00_init_notes_users.js](./exercise-17/migrations/20240321_00_init_notes_users.js)
+
