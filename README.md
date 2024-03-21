@@ -356,3 +356,19 @@ Implemented together with the previous exercises in [exercise-5](./exercise-5).
   }
 ]
 ```
+
+## Exercise 13.17.
+**Task:**
+
+Delete all tables from your application's database.
+
+Make a migration that initializes the database. Add created_at and updated_at timestamps for both tables. Keep in mind that you will have to add them in the migration yourself.
+
+NOTE: be sure to remove the commands User.sync() and Blog.sync(), which synchronizes the models' schemas from your code, otherwise your migrations will fail.
+
+NOTE2: if you have to delete tables from the command line (i.e. you don't do the deletion by undoing the migration), you will have to delete the contents of the migrations table if you want your program to perform the migrations again.
+
+**Solution:**
+Implemented in [exercise-17](./exercise-17).
+
+...
