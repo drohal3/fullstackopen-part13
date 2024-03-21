@@ -314,3 +314,45 @@ Ordered achieved by adding the following section in `findAll` options:
 order: [['likes','DESC']]
 ```
 
+## Exercise 13.16.
+Make a route for the application /api/authors that returns the number of blogs for each author and the total number of likes. Implement the operation directly at the database level. You will most likely need the [group by](https://sequelize.org/master/manual/model-querying-basics.html#grouping) functionality, and the [sequelize.fn](https://sequelize.org/master/manual/model-querying-basics.html#specifying-attributes-for-select-queries) aggregator function.
+
+The JSON returned by the route might look like the following, for example:
+```js
+[
+  {
+    author: "Jami Kousa",
+    articles: "3",
+    likes: "10"
+  },
+  {
+    author: "Kalle Ilves",
+    articles: "1",
+    likes: "2"
+  },
+  {
+    author: "Dan Abramov",
+    articles: "1",
+    likes: "4"
+  }
+]
+```
+
+**Solution:**
+Implemented together with the previous exercises in [exercise-5](./exercise-5).
+
+`/api/authors` response:
+```json
+[
+  {
+    "author":"Dominik Rohal",
+    "articles":"5",
+    "likes":"98"
+  },
+  {
+    "author":"Kristina Bekhit",
+    "articles":"1",
+    "likes":"0"
+  }
+]
+```
