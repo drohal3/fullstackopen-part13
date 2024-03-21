@@ -373,3 +373,6 @@ Implemented in [exercise-17](./exercise-17).
 
 Migration file: [20240321_00_init_notes_users.js](./exercise-17/migrations/20240321_00_init_notes_users.js)
 
+> The columns createdAt and updatedAt are created manually, but the values are handled by database.
+
+
