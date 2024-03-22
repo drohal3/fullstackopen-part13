@@ -561,6 +561,7 @@ You may also choose to use some purpose-built npm library to handle sessions.
 Make the database changes required for this task using migrations.
 
 **Solution:**
+Implemented together with the previous exercises in [exercise-17](./exercise-17).
 
 Generated and executed query (based on migration file):
 ```sql
