@@ -537,3 +537,40 @@ Modify the route that returns a single user's information so that the request ca
 
 **Solution:**
 Implemented together with the previous exercises in [exercise-17](./exercise-17).
+
+## Exercise 13.24.
+Grand finale: [towards the end](https://fullstackopen.com/en/part4/token_authentication#problems-of-token-based-authentication) of part 4 there was mention of a token-criticality problem: if a user's access to the system is decided to be revoked, the user may still use the token in possession to use the system.
+
+The usual solution to this is to store a record of each token issued to the client in the backend database, and to check with each request whether access is still valid. In this case, the validity of the token can be removed immediately if necessary. Such a solution is often referred to as a server-side session.
+
+Now expand the system so that the user who has lost access will not be able to perform any actions that require login.
+
+You will probably need at least the following for the implementation
+
+- a boolean value column in the user table to indicate whether the user is disabled
+  - it is sufficient to disable and enable users directly from the database
+- a table that stores active sessions
+  - a session is stored in the table when a user logs in, i.e. operation POST /api/login
+  - the existence (and validity) of the session is always checked when the user makes an operation that requires login
+- a route that allows the user to "log out" of the system, i.e. to practically remove active sessions from the database, the route can be e.g. DELETE /api/logout
+
+Keep in mind that actions requiring login should not be successful with an "expired token", i.e. with the same token after logging out.
+
+You may also choose to use some purpose-built npm library to handle sessions.
+
+Make the database changes required for this task using migrations.
+
+**Solution:**
+
+Generated and executed query (based on migration file):
+```sql
+ALTER TABLE "public"."users" ADD COLUMN "disabled" BOOLEAN DEFAULT false;
+```
+
+and
+
+```sql
+CREATE TABLE IF NOT EXISTS "sessions" ("id"  SERIAL , "user_id" INTEGER NOT NULL REFERENCES "users" ("id"), "token" TEXT NOT NULL, PRIMARY KEY ("id"));
+```
+
+> I used token extractor as global middleware, triggered for every call. For simplification and use of this course for educational purposes, the validity of token and whether user is expired, is checked every time a token is provided. Changing it to verifications being used only for specific paths requires only removing the middleware in index.js and calling it only in the specific api functions.
