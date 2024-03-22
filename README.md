@@ -420,3 +420,47 @@ Generated and executed query when rerunning the app:
 CREATE TABLE IF NOT EXISTS "reading_list" ("id"  SERIAL , "user_id" INTEGER NOT NULL REFERENCES "users" ("id"), "blog_id" INTEGER NOT NULL REFERENCES "blogs" ("id"), "read" BOOLEAN DEFAULT false, PRIMARY KEY ("id"));
 ```
 
+## Exercise 13.20.
+**Task:**
+
+Now add functionality to the application to support the reading list.
+
+Adding a blog to the reading list is done by making an HTTP POST to the path /api/readinglists, the request will be accompanied with the blog and user id:
+
+```json
+{
+  "blogId": 10,
+  "userId": 3
+}
+```
+Also modify the individual user route GET /api/users/:id to return not only the user's other information but also the reading list, e.g. in the following format:
+
+```js
+{
+  name: "Matti Luukkainen",
+  username: "mluukkai@iki.fi",
+  readings: [
+    {
+      id: 3,
+      url: "https://google.com",
+      title: "Clean React",
+      author: "Dan Abramov",
+      likes: 34,
+      year: null,
+    },
+    {
+      id: 4,
+      url: "https://google.com",
+      title: "Clean Code",
+      author: "Bob Martin",
+      likes: 5,
+      year: null,
+    }
+  ]
+}
+```
+At this point, information about whether the blog is read or not does not need to be available.
+
+**Solution:**
+Implemented together with the previous exercises in [exercise-17](./exercise-17).
+

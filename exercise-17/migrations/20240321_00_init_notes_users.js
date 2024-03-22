@@ -43,6 +43,7 @@ module.exports = {
         allowNull: false
       },
       username: {
+        // shouldn't be unique?
         type: DataTypes.TEXT,
         allowNull: false,
         validate: {
