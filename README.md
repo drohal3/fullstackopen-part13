@@ -511,3 +511,17 @@ Note also that despite having an array field readinglists in the example, it sho
 
 **Solution:**
 Implemented together with the previous exercises in [exercise-17](./exercise-17).
+
+
+## Exercise 13.22.
+**Task:**
+Implement functionality in the application to mark a blog in the reading list as read. Marking as read is done by making a request to the PUT /api/readinglists/:id path, and sending the request with
+
+```json
+{ "read": true }
+```
+
+The user can only mark the blogs in their own reading list as read. The user is identified as usual from the token accompanying the request.
+
+**Solution:**
+Implemented together with the previous exercises in [exercise-17](./exercise-17).
