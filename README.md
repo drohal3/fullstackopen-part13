@@ -525,3 +525,15 @@ The user can only mark the blogs in their own reading list as read. The user is 
 
 **Solution:**
 Implemented together with the previous exercises in [exercise-17](./exercise-17).
+
+## Exercise 13.23.
+**Task:**
+
+Modify the route that returns a single user's information so that the request can control which of the blogs in the reading list are returned:
+
+- GET /api/users/:id returns the entire reading list
+- GET /api/users/:id?read=true returns blogs that have been read
+- GET /api/users/:id?read=false returns blogs that have not been read
+
+**Solution:**
+Implemented together with the previous exercises in [exercise-17](./exercise-17).
