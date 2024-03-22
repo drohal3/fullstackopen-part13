@@ -4,6 +4,7 @@ const { sequelize } = require('../util/db')
 
 class Blog extends Model {}
 
+// ===> While migration file uses snake case form (user_id), model file uses camel case (userId)! <===
 Blog.init({
   id: {
     type: DataTypes.INTEGER,

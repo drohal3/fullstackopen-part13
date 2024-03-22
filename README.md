@@ -402,3 +402,21 @@ year: {
 ```
 
 An alternative would be to use built-in validators min and max.
+
+## Exercise 13.19.
+**Task:**
+
+Give users the ability to add blogs on the system to a reading list. When added to the reading list, the blog should be in the unread state. The blog can later be marked as read. Implement the reading list using a connection table. Make database changes using migrations.
+
+In this task, adding to a reading list and displaying the list need not be successful other than directly using the database.
+
+**Solution:**
+Implemented together with the previous exercises in [exercise-17](./exercise-17).
+
+Created `reading_list` as a connection table with reference to `blog`'s and `users`'s `id` and attribute `read` with a boolean value.
+
+Generated and executed query when rerunning the app:
+```
+CREATE TABLE IF NOT EXISTS "reading_list" ("id"  SERIAL , "user_id" INTEGER NOT NULL REFERENCES "users" ("id"), "blog_id" INTEGER NOT NULL REFERENCES "blogs" ("id"), "read" BOOLEAN DEFAULT false, PRIMARY KEY ("id"));
+```
+
